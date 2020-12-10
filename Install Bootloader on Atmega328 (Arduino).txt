@@ -1,0 +1,70 @@
+This tutorial uses arduino uno board with 16 MHz crystal
+========================================================
+
+Get an arduino board with bootloader (Call this board A)
+
+Find another arduino board to place the Atmega328p that does have bootloader and insert it into it (Call this board B)
+Or
+If you don't have another Arduino board use the schematic on https://www.arduino.cc/en/Tutorial/BuiltInExamples/ArduinoToBreadboard for connection.
+
+
+Connection 
+----------
+
+Board A        Board B
+-------        -------
+
+PIN 13 ------> PIN 13
+
+PIN 12 ------> PIN 12
+
+PIN 11 ------> PIN 11
+
+PIN 10 ------> RESET PIN
+
+GND ---------> GND
+
+5V ----------> 5V
+
+
+Connect connect USB to board A
+
+Make sure you have selected the current Arduino board COM Port in Tools -> COM Port
+
+Goto File -> Preferences
+Paste the URL below in 'Additional Board URL' input field
+https://mcudude.github.io/MiniCore/package_MCUdude_MiniCore_index.json
+Click OK
+
+Goto Tools -> Board -> 'Board Manager' 
+Make sure you are connected to the internet
+Type minicore in the search box then install it
+Closs this istallation dialog once installed.
+
+Open File -> Examples -> ArduinoISP -> ArduinoISP
+Click Upload button and wait for Done Uploading below the IDE
+
+
+Select Tools -> Board -> Atmega328 (This is down the menu. It is installed by the minicore)
+
+Select Tools -> Programmer -> Arduino as ISP
+
+Make sure that 16MHz is selected under Tools -> Clock
+
+Click on Tools -> Burn Bootloader
+Wait for the success message
+
+
+Change back to Tools -> Board -> Arduino Uno
+Change back to Tools -> Programmer -> AVR ISP
+
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+You are done with the bootloader setup
+
+Upload a blink example to confirm the bootloader setup
+
+Thanks.
+
+
+.........
